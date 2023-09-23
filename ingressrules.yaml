@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mylaravelapp-ingress
+spec:
+  rules:
+    - host: acb6b979339ca4669835b43e9c751249-301347611.us-west-1.elb.amazonaws.com 
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: laravel-service
+                port:
+                  number: 80
